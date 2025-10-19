@@ -7,6 +7,10 @@ REGION="us-west-2"
 
 echo "🚀 Deploying Recruiter Insights MCP Server (Simplified)..."
 
+# Get the script's directory
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SRC_DIR="$SCRIPT_DIR/../src"
+
 # Deploy CloudFormation stack
 echo "☁️  Creating infrastructure..."
 aws cloudformation deploy \
@@ -36,7 +40,7 @@ python3 -m pip install awslabs-mcp-lambda-handler -t . --upgrade
 rm -rf boto3* botocore* s3transfer* jmespath* urllib3* 2>/dev/null || true
 
 # Copy our source files
-cp /Users/awsdeep/Library/CloudStorage/WorkDocsDrive-Documents/code/01-strands/sample-strands-agent-chatbot/agent-blueprint/serverless-mcp-farm/recruiter-insights/src/*.py .
+cp "$SRC_DIR"/*.py .
 
 # Clean up unnecessary files
 find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
@@ -45,7 +49,7 @@ find . -name "*.pyo" -delete
 find . -name "*.dist-info" -type d -exec rm -rf {} + 2>/dev/null || true
 
 # Create zip with absolute path
-INFRASTRUCTURE_DIR="/Users/awsdeep/Library/CloudStorage/WorkDocsDrive-Documents/code/01-strands/sample-strands-agent-chatbot/agent-blueprint/serverless-mcp-farm/recruiter-insights/infrastructure"
+INFRASTRUCTURE_DIR="$SCRIPT_DIR"
 zip -r "$INFRASTRUCTURE_DIR/recruiter-insights-lambda.zip" . -q
 
 # Check size
