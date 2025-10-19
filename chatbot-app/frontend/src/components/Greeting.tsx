@@ -1,6 +1,17 @@
 "use client"
 
 export function Greeting() {
+  const scrollToChat = () => {
+    const chatElement = document.getElementById("chatbox")
+    if (chatElement) {
+      chatElement.scrollIntoView({ behavior: "smooth", block: "start" })
+
+      // Add a temporary bounce animation for visual cue
+      chatElement.classList.add("animate-bounce-once")
+      setTimeout(() => chatElement.classList.remove("animate-bounce-once"), 800)
+    }
+  }
+
   return (
     <div className="w-full flex flex-col justify-center items-center min-h-[60vh] relative overflow-hidden">
       {/* 🎬 Background GIF */}
@@ -12,7 +23,10 @@ export function Greeting() {
 
       {/* 🟩 Overlay text */}
       <div className="relative z-10 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-balance animate-fade-in">
+        <h1
+          onClick={scrollToChat}
+          className="text-4xl md:text-5xl font-bold text-balance animate-fade-in cursor-pointer transition-transform duration-300 hover:scale-105"
+        >
           Welcome to{" "}
           <span className="bg-gradient-to-r from-green-600 via-emerald-500 to-lime-500 bg-clip-text text-transparent dark:from-green-400 dark:via-lime-300 dark:to-emerald-400">
             Boses Berde

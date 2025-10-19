@@ -339,3 +339,12 @@ div[style*="position: fixed"][style*="top: 0"][style*="right: 0"][style*="z-inde
 .chat-chart-content p {
   @apply text-base mb-4;
 }
+
+@keyframes bounce-once {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-bounce-once {
+  animation: bounce-once 0.8s ease;
+}

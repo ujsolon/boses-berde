@@ -255,6 +255,7 @@ function ChatInterface() {
 
         {/* Input Area */}
         <form
+          id="chatbox"
           onSubmit={async (e) => {
             await handleSendMessage(e, selectedFiles)
             setSelectedFiles([])
