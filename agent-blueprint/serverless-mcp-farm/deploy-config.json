@@ -32,6 +32,11 @@
         "enabled": true,
         "stack_name": "mcp-recruiter-insights-server",
         "description": "Recruiter Insights and Candidate Analysis MCP Server"
+      },
+      "job-finder": {
+        "enabled": true,
+        "stack_name": "mcp-job-finder-server",
+        "description": "Job Finder and Candidate Analysis MCP Server"
       }
     }
   },

@@ -1,0 +1,2 @@
+boto3
+awslabs-mcp-lambda-handler

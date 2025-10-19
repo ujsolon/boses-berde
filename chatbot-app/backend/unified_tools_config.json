@@ -218,7 +218,20 @@
       },
       "category": "hr",
       "icon": "users",
-      "enabled": true,
+      "enabled": false,
+      "tool_type": "mcp"
+    },
+    {
+      "id": "job-finder",
+      "name": "Job Finder",
+      "description": "AI-powered job search and candidate matching tool with personalized job recommendations and resume analysis",
+      "type": "mcp",
+      "config": {
+        "url": "ssm:///mcp/endpoints/serverless/job-finder"
+      },
+      "category": "hr",
+      "icon": "users",
+      "enabled": false,
       "tool_type": "mcp"
     }
   ]
