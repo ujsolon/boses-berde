@@ -106,6 +106,32 @@
       "storage_behavior": "self_managed"
     },
     {
+      "id": "job-finder",
+      "name": "Job Finder",
+      "description": "Job search and candidate matching tool with personalized job recommendations and resume analysis",
+      "type": "mcp",
+      "config": {
+        "url": "ssm:///mcp/endpoints/serverless/job-finder"
+      },
+      "category": "hr",
+      "icon": "users",
+      "enabled": false,
+      "tool_type": "mcp"
+    },
+    {
+      "id": "training-finder",
+      "name": "Training Finder",
+      "description": "Training and course recommendation tool with personalized learning paths and skill development resources",
+      "type": "mcp",
+      "config": {
+        "url": "ssm:///mcp/endpoints/serverless/training-finder"
+      },
+      "category": "hr",
+      "icon": "users",
+      "enabled": false,
+      "tool_type": "mcp"
+    },
+    {
       "id": "aws-documentation",
       "name": "AWS Documentation",
       "description": "Search AWS documentation using official Search API",
@@ -215,19 +241,6 @@
       "type": "mcp",
       "config": {
         "url": "ssm:///mcp/endpoints/serverless/recruiter-insights"
-      },
-      "category": "hr",
-      "icon": "users",
-      "enabled": false,
-      "tool_type": "mcp"
-    },
-    {
-      "id": "job-finder",
-      "name": "Job Finder",
-      "description": "AI-powered job search and candidate matching tool with personalized job recommendations and resume analysis",
-      "type": "mcp",
-      "config": {
-        "url": "ssm:///mcp/endpoints/serverless/job-finder"
       },
       "category": "hr",
       "icon": "users",

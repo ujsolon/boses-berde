@@ -37,6 +37,11 @@
         "enabled": true,
         "stack_name": "mcp-job-finder-server",
         "description": "Job Finder and Candidate Analysis MCP Server"
+      },
+      "training-finder": {
+        "enabled": true,
+        "stack_name": "mcp-training-finder-server",
+        "description": "Training Finder MCP Server"
       }
     }
   },
