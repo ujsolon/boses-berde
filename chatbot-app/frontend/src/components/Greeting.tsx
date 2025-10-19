@@ -7,8 +7,8 @@ export function Greeting() {
       chatElement.scrollIntoView({ behavior: "smooth", block: "start" })
 
       // Add a temporary bounce animation for visual cue
-      chatElement.classList.add("animate-bounce-once")
-      setTimeout(() => chatElement.classList.remove("animate-bounce-once"), 800)
+      chatElement.classList.add("animate-bounce-once-strong")
+      setTimeout(() => chatElement.classList.remove("animate-bounce-once-strong"), 1000)
     }
   }
 

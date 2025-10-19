@@ -340,11 +340,22 @@ div[style*="position: fixed"][style*="top: 0"][style*="right: 0"][style*="z-inde
   @apply text-base mb-4;
 }
 
-@keyframes bounce-once {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+@keyframes bounce-once-strong {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-14px);
+  }
+  60% {
+    transform: translateY(6px);
+  }
+  80% {
+    transform: translateY(-4px);
+  }
 }
 
-.animate-bounce-once {
-  animation: bounce-once 0.8s ease;
+.animate-bounce-once-strong {
+  animation: bounce-once-strong 1s cubic-bezier(.28,.84,.42,1) both;
 }
+
