@@ -204,9 +204,14 @@ export function ToolSidebar({ availableTools, onToggleTool, onClearChat, refresh
               </Button>
             </div>
           </div>
-          <p className="text-sm text-sidebar-foreground px-2">
-            {enabledCount} of {totalCount} tools enabled
-          </p>
+          <div className="px-2 space-y-1">
+            <p className="text-sm text-sidebar-foreground">
+              {enabledCount} of {totalCount} tools enabled
+            </p>
+            <p className="text-xs text-muted-foreground">
+              Hover over tools to see descriptions
+            </p>
+          </div>
         </SidebarMenu>
       </SidebarHeader>
 
@@ -214,6 +219,42 @@ export function ToolSidebar({ availableTools, onToggleTool, onClearChat, refresh
         {/* Only show content when tools are loaded */}
         {availableTools.length > 0 && (
           <div className="animate-in fade-in-0 duration-300">
+            {/* Agent Tools - Now shown first */}
+            {groupedTools['agent'].length > 0 && (
+              <SidebarGroup>
+                <SidebarGroupLabel>
+                  <Brain className="h-4 w-4 mr-2" />
+                  AI Agents
+                </SidebarGroupLabel>
+                <SidebarGroupContent>
+                  <SidebarMenu>
+                    {groupedTools['agent'].map((tool) => (
+                      <SidebarMenuItem key={tool.id}>
+                        <div 
+                          className="flex items-center justify-between p-2 rounded-md hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors duration-150 group"
+                          title={tool.description}
+                        >
+                          <div className="flex-1 min-w-0">
+                            <div className="font-medium text-sm text-sidebar-foreground truncate">
+                              {tool.name}
+                            </div>
+                            <div className="text-xs text-sidebar-foreground truncate">
+                              {tool.description}
+                            </div>
+                          </div>
+                          <Switch
+                            checked={tool.enabled}
+                            onCheckedChange={() => onToggleTool(tool.id)}
+                            className="ml-2 flex-shrink-0"
+                          />
+                        </div>
+                      </SidebarMenuItem>
+                    ))}
+                  </SidebarMenu>
+                </SidebarGroupContent>
+              </SidebarGroup>
+            )}
+
             {/* Strands Built-in Tools */}
             {groupedTools['built-in'].length > 0 && (
               <SidebarGroup>
@@ -225,7 +266,10 @@ export function ToolSidebar({ availableTools, onToggleTool, onClearChat, refresh
                   <SidebarMenu>
                     {groupedTools['built-in'].map((tool) => (
                       <SidebarMenuItem key={tool.id}>
-                        <div className="flex items-center justify-between p-2 rounded-md hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors duration-150">
+                        <div 
+                          className="flex items-center justify-between p-2 rounded-md hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors duration-150"
+                          title={tool.description}
+                        >
                           <div className="flex-1 min-w-0">
                             <div className="font-medium text-sm text-sidebar-foreground truncate">
                               {tool.name}
@@ -258,40 +302,10 @@ export function ToolSidebar({ availableTools, onToggleTool, onClearChat, refresh
                   <SidebarMenu>
                     {groupedTools['custom'].map((tool) => (
                       <SidebarMenuItem key={tool.id}>
-                        <div className="flex items-center justify-between p-2 rounded-md hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors duration-150">
-                          <div className="flex-1 min-w-0">
-                            <div className="font-medium text-sm text-sidebar-foreground truncate">
-                              {tool.name}
-                            </div>
-                            <div className="text-xs text-sidebar-foreground truncate">
-                              {tool.description}
-                            </div>
-                          </div>
-                          <Switch
-                            checked={tool.enabled}
-                            onCheckedChange={() => onToggleTool(tool.id)}
-                            className="ml-2 flex-shrink-0"
-                          />
-                        </div>
-                      </SidebarMenuItem>
-                    ))}
-                  </SidebarMenu>
-                </SidebarGroupContent>
-              </SidebarGroup>
-            )}
-
-            {/* Agent Tools */}
-            {groupedTools['agent'].length > 0 && (
-              <SidebarGroup>
-                <SidebarGroupLabel>
-                  <Brain className="h-4 w-4 mr-2" />
-                  AI Agents
-                </SidebarGroupLabel>
-                <SidebarGroupContent>
-                  <SidebarMenu>
-                    {groupedTools['agent'].map((tool) => (
-                      <SidebarMenuItem key={tool.id}>
-                        <div className="flex items-center justify-between p-2 rounded-md hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors duration-150">
+                        <div 
+                          className="flex items-center justify-between p-2 rounded-md hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors duration-150"
+                          title={tool.description}
+                        >
                           <div className="flex-1 min-w-0">
                             <div className="font-medium text-sm text-sidebar-foreground truncate">
                               {tool.name}
@@ -328,7 +342,10 @@ export function ToolSidebar({ availableTools, onToggleTool, onClearChat, refresh
                 <SidebarMenu>
                   {mcpServers.map((server) => (
                     <SidebarMenuItem key={server.id}>
-                      <div className="flex items-center justify-between p-2 rounded-md hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors duration-150 group">
+                      <div 
+                        className="flex items-center justify-between p-2 rounded-md hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors duration-150 group"
+                        title={server.description}
+                      >
                         <div className="flex-1 min-w-0">
                           <div className="font-medium text-sm text-sidebar-foreground truncate">
                             {server.name}
