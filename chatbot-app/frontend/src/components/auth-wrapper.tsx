@@ -32,7 +32,7 @@ export default function AuthWrapper({
       <div className="min-h-screen">
         <div className="flex justify-between items-center p-4 bg-white dark:bg-gray-900 border-b">
           <div className="flex items-center gap-2">
-            <h1 className="text-xl font-semibold">Strands Chatbot</h1>
+            <h1 className="text-xl font-semibold">Boses Berde</h1>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-sm text-gray-600 dark:text-gray-400">
@@ -54,7 +54,7 @@ export default function AuthWrapper({
           return (
             <div className="text-center p-4">
               <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-                Strands Chatbot
+                Boses Berde
               </h1>
               <p className="text-gray-600 dark:text-gray-400 mt-2">
                 Sign in to access your AI assistant
@@ -68,7 +68,7 @@ export default function AuthWrapper({
         <div className="min-h-screen">
           <div className="flex justify-between items-center p-4 bg-white dark:bg-gray-900 border-b">
             <div className="flex items-center gap-2">
-              <h1 className="text-xl font-semibold">Strands Chatbot</h1>
+              <h1 className="text-xl font-semibold">Boses Berde</h1>
             </div>
             <div className="flex items-center gap-4">
               <span className="text-sm text-gray-600 dark:text-gray-400">

@@ -6,14 +6,21 @@ import { ThemeProvider } from '@/components/theme-provider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Strands Chatbot',
-  description: 'A smart AI assistant powered by Strands',
+  title: 'Boses Berde — Empowering Youth into Green & Sustainable Careers',
+  description:
+    'An AI-powered guide for climate-positive careers. Boses Berde uses AWS Strands and Bedrock to match interests, suggest training, and open pathways into sustainable jobs for young people.',
+  openGraph: {
+    title: 'Boses Berde — Empowering Youth into Green & Sustainable Careers',
+    description:
+      'AI assistant matching skills to green opportunities, part of the Green Rising initiative.',
+  },
   icons: {
-    icon: '/strands.svg',
-    shortcut: '/strands.svg',
-    apple: '/strands.svg',
+    icon: '/bosesberder.svg',
+    shortcut: '/bosesberder.svg',
+    apple: '/bosesberder.svg',
   },
 }
+
 
 export const viewport = {
   width: 'device-width',

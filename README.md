@@ -1,3 +1,19 @@
+# Boses Berde 🌿
+
+An AI-powered sustainability mentor that helps young people discover green and future-proof careers.  
+Built on AWS Bedrock and the Strands Agent framework, *Boses Berde* connects interests, skills, and training paths to sustainability-focused opportunities — inspired by UNICEF’s **Green Rising** initiative and the **Global Data Science Challenge: Green Agents of Change**.
+
+## 🌍 About
+Boses Berde (literally “Green Voice”) is your friendly guide to climate-positive careers. It uses AI reasoning and custom tools to:
+- Match user interests to green jobs
+- Suggest relevant training or certifications
+- Educate users on sustainability and environmental awareness
+
+---
+### Credits
+This project builds upon the [Sample Strands Agent Chatbot](https://github.com/aws-samples/sample-strands-agent-chatbot) (MIT Licensed) by AWS Samples, extending it for sustainability and green career matching use cases.
+
+
 # Sample Strands Agent Chatbot
 
 A comprehensive AI agent testing platform built with Strands Agents framework, designed for rapid prototyping and testing of business-specific AI tools. This platform enables plug-and-play integration of Built-in tools, Custom tools, MCP servers, and Agents with easy toggle functionality.
