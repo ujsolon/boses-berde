@@ -280,6 +280,13 @@ Edit `chatbot-app/backend/unified_tools_config.json`:
   ],
   "agents": [
     {
+      "id": "boses_berde_agent", 
+      "name": "Boses Berde Agent",
+      "enabled": true,
+      "category": "green-initiatives",
+      "description": "Agent to guide with compatible jobs and training."
+    },
+    {
       "id": "spending_analysis_agent",
       "name": "Spending Analysis Agent",
       "enabled": true,

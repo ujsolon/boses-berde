@@ -17,7 +17,7 @@
       "name": "HTTP Request",
       "description": "Make API calls and fetch web data",
       "icon": "globe",
-      "enabled": false,
+      "enabled": true,
       "import_path": "strands_tools.http_request",
       "category": "web",
       "tool_type": "built-in"
@@ -77,8 +77,20 @@
       "function_name": "create_visualization",
       "category": "utilities",
       "icon": "bar-chart",
-      "enabled": false,
+      "enabled": true,
       "tool_type": "custom"
+    },
+    {
+      "id": "boses_berde_tool",
+      "type": "agent",
+      "name": "Boses Berde",
+      "description": "Agent to guide with compatible jobs and training.",
+      "module_path": "custom_tools.boses_berde_tool",
+      "function_name": "boses_berde_tool",
+      "category": "green-initiatives",
+      "icon": "trending-up",
+      "enabled": true,
+      "tool_type": "agent"
     },
     {
       "id": "spending_analysis_tool",
@@ -115,7 +127,7 @@
       },
       "category": "hr",
       "icon": "users",
-      "enabled": false,
+      "enabled": true,
       "tool_type": "mcp"
     },
     {
@@ -128,7 +140,7 @@
       },
       "category": "hr",
       "icon": "users",
-      "enabled": false,
+      "enabled": true,
       "tool_type": "mcp"
     },
     {
