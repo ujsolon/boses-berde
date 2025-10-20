@@ -1,8 +1,7 @@
-Source URL: https://www.example-site.com/script1.py
 import os
 
 # Full path to your data folder
-directory = "/home/yujey02/boses-berde/agent-blueprint/serverless-mcp-farm/job-finder/jobs-data"
+directory = "/home/yujey02/boses-berde/agent-blueprint/serverless-mcp-farm/training-finder/trainings-data"
 
 # Confirm directory exists
 if not os.path.exists(directory):
