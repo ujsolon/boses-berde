@@ -208,9 +208,6 @@ export function ToolSidebar({ availableTools, onToggleTool, onClearChat, refresh
             <p className="text-sm text-sidebar-foreground">
               {enabledCount} of {totalCount} tools enabled
             </p>
-            <p className="text-xs text-muted-foreground">
-              Hover over tools to see descriptions
-            </p>
           </div>
         </SidebarMenu>
       </SidebarHeader>

@@ -137,6 +137,25 @@ def matchJobsToProfile(profile_text: str, min_similarity: float = 0.3) -> str:
         }, indent=2)
     except Exception as e:
         return json.dumps({"error": str(e)}, indent=2)
+        
+@mcp.tool()
+def getJobDetails(job_filename: str) -> str:
+    """Return details of a specific job posting given its filename."""
+    try:
+        s3 = boto3.client("s3")
+        key = f"{JOB_FOLDER}{job_filename}"
+
+        file_obj = s3.get_object(Bucket=S3_BUCKET_NAME, Key=key)
+        content = file_obj["Body"].read().decode("utf-8")
+
+        # Try to parse JSON, fallback to raw text
+        job_data = json.loads(content) if content.strip().startswith("{") else {"description": content}
+        return json.dumps(job_data, indent=2)
+
+    except s3.exceptions.NoSuchKey:
+        return json.dumps({"error": f"Job '{job_filename}' not found."}, indent=2)
+    except Exception as e:
+        return json.dumps({"error": str(e)}, indent=2)
 
 @mcp.tool()
 def generateJobMarketInsights() -> str:

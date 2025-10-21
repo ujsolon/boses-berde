@@ -145,7 +145,7 @@ def _http_get(url: str, params: Dict = None, headers: Dict = None, timeout: int 
 
 # ---------------- Core agent logic ---------------- #
 @tool
-def boses_berde(user_id: str = None, gather_info: bool = True) -> str:
+def boses_berde_tool(user_id: str = None, gather_info: bool = True) -> str:
     """
     Main Boses Berde agent tool.
 
